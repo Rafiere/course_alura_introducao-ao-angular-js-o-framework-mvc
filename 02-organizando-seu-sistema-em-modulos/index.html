@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- O "ng-app" é uma diretiva do AngularJS, e ele amplia o vocabulário do navegador. Esse atributo serve para adicionarmos o AngularJS no projeto. Essa diretiva indica para o Angular a parte do DOM em que ele ficará responsável. Por causa dessa característica, ele pode coexistir com outros frameworks.-->
+<html lang="en" ng-app="HelloController">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular JS</title>
+  </head>
+
+  <!-- Estamos associando o controller "HelloController" a um fragmento do DOM, através da diretiva "ng-controller". Quando a página for carregada, o Angular instanciará o controller sem precisarmos nos preocupar com isso. Temos apenas que importar esse controller em nossa página. -->
+  <body ng-controller="HelloController">
+    <!-- Todas as vezes que esse botão for clicado, a função "incrementar()" será chamada. Essa função deverá ser inserida no controller. -->
+    <button ng-click="incrementar()">Clicar</button>
+
+    <!-- O "{{}}" é uma Angular Expression. -->
+    <label>Você clicou {{total}} veze(s)</label>
+
+    <!-- Se a AngularExpression "{{copyright}}" não for encontrada no "RodapeController", o Angular tentará encontrá-la no nível superior, que possui a hierarquia "HelloController". -->
+
+    <!-- Esse padrão é o mesmo quando herdamos características via prototype. Quando um objeto não encontra um método ou um atributo em sua declaração, ele tenta procurar esse método ou atributo em seu prototype. -->
+    <footer ng-controller="RodapeController">{{copyright}}</footer>
+
+    <!-- Estamos importando o AngularJS -->
+    <script src="../angular-js/angular.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="./controller/HelloController.js"></script>
+    <script src="./controller/RodapeController.js"></script>
+  </body>
+</html>
